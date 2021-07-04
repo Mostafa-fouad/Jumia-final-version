@@ -7,11 +7,12 @@ ________________________________________________________________________________
 Create Docker Image from Dockerfile:
 ------------------------------------
 = First you should put the jar and the sample.db in the same folder found in the project
- (Jumia-Custom-Filter-App/jumia-exercise-0.0.1-SNAPSHOT.jar) & (Jumia-Custom-Filter-App/sample.db)
+  (Jumia-final-version/Jumia-Custom-Filter-App/).
+  (Jumia-Custom-Filter-App/jumia-exercise-0.0.1-SNAPSHOT.jar) & (Jumia-Custom-Filter-App/sample.db)
   because I have configured the Dockerfile upon this structure. 
   Then run the following command in the cmd after cd to the Dockerfile directory.
 
-D:/jumia-exercise> docker build -t jumiatask .
+D:/Jumia-final-version> docker build -t jumiatask .
 
 ___________________________________________________________________________________________________________
 
