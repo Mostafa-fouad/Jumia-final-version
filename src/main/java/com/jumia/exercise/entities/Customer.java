@@ -19,7 +19,7 @@ import javax.persistence.Table;
 public class Customer {
     @Id
     @Column(name = "id")
-    Integer id;
-    String name;
-    String phone;
+    private Integer id;
+    private String name;
+    private String phone;
 }

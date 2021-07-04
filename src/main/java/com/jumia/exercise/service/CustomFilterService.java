@@ -17,12 +17,12 @@ import java.util.List;
 @Service
 public class CustomFilterService {
     @Autowired
-    CustomerRepository customerRepository;
+    private CustomerRepository customerRepository;
     @Autowired
-    CountryCodeRepository countryCodeRepository;
+    private CountryCodeRepository countryCodeRepository;
     private String countryCode;
-    public static Map<String, String> countryCodeMap;
-    public static Map<String, String> countryRegexMap;
+    private static Map<String, String> countryCodeMap;
+    private static Map<String, String> countryRegexMap;
 
     static { //Initializing Lookups
         countryCodeMap = new HashMap<>();

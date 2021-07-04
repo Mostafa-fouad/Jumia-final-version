@@ -20,9 +20,9 @@ import javax.persistence.Table;
 public class CountryCodeLKP {
     @Id
     @Column(name = "COUNTRY_CODE")
-    String countryCode;
+    private String countryCode;
 
     @Column(name = "COUNTRY")
-    String country;
+    private String country;
 
 }

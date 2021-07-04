@@ -18,8 +18,8 @@ import java.util.List;
 public class CustomFilterController {
 
     @Autowired
-    CustomFilterService customerService;
-    List<String> countries;
+    private CustomFilterService customerService;
+    private List<String> countries;
 
 
     @GetMapping("/custom-filtration")

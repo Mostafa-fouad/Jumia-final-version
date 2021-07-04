@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class SearchResultDto {
-    Integer id;
-    String customerName;
-    String countryCode;
-    String country;
-    String phoneNumber;
-    String phoneStatus;
+    private Integer id;
+    private String customerName;
+    private String countryCode;
+    private String country;
+    private String phoneNumber;
+    private String phoneStatus;
 }

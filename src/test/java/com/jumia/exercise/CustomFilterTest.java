@@ -1,17 +1,14 @@
 package com.jumia.exercise;
 
 import com.jumia.exercise.dto.SearchResultDto;
-import com.jumia.exercise.entities.Customer;
 import com.jumia.exercise.service.CustomFilterService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;

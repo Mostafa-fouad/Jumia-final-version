@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class CustomFilterDto {
-    String countryName;
-    String status;
+   private String countryName;
+   private String status;
 }
