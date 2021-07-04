@@ -56,6 +56,7 @@ public class CustomFilterController {
             searchResultList = customerService.searchByCountryStatus(countryName,status);
         else //get all customers
             searchResultList = customerService.initTable();
+
         /*
         Binding results to the Front-End
          */

@@ -5,6 +5,7 @@ import com.jumia.exercise.entities.Customer;
 import com.jumia.exercise.service.CustomFilterService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -13,20 +14,16 @@ import java.util.List;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.core.Is.is;
-import static org.mockito.ArgumentMatchers.any;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @SpringBootTest
 public class CustomFilterTest {
 
-    @Autowired
-    CustomFilterService customFilterService;
+    @Autowired CustomFilterService customFilterService;
+
 
     List<SearchResultDto> ethiopiaValidation = new ArrayList<>();
-    List<Customer> notValidCustomers;
 
     @BeforeEach
     public void setUp() {
@@ -47,18 +44,17 @@ public class CustomFilterTest {
                 .country("Ethiopia")
                 .customerName("ZEKARIAS KEBEDE")
                 .build());
-        notValidCustomers = null;
     }
 
     @Test
-    public void searchByCountryStatus() throws Exception {
+    public void searchByCountryStatus() {
         assertThat(customFilterService.searchByCountryStatus("Cameroon","Valid")).isEmpty();
           }
 
     @Test
-    public void validPhoneNumber() throws Exception {
+    public void validPhoneNumber()  {
         String status = customFilterService.validatePhoneNumber("(212) 698054317");
-        assertThat(status).isEqualTo("Valid");
+        assertEquals("Valid",status);
     }
 
     @Test
@@ -69,7 +65,6 @@ public class CustomFilterTest {
 
     @Test
     public void ethiopiaValidation() {
-        List<SearchResultDto> searchResultDtos = customFilterService.searchByCountryStatus("Ethiopia","Not valid");
-        assertThat(searchResultDtos).isEqualTo(ethiopiaValidation);
+        assertThat(customFilterService.searchByCountryStatus("Ethiopia","Not valid")).isEqualTo(ethiopiaValidation);
     }
 }

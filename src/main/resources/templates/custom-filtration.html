@@ -5,16 +5,6 @@ xmlns:th="http://www.thymleaf.org">
     <meta charset="UTF-8">
     <title>Custom Filtration</title>
     <link rel="icon" th:href="@{/filter.png}" type="image/x-icon" >
-    <!--    <link rel="stylesheet" th:href="@{/filtration.css}" />-->
-<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
-<!--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>-->
-<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>-->
-<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css" rel="stylesheet">-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>-->
-<!--    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">-->
-<!--    <script src=" https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>-->
-<!--    <script th:src="@{/data-tables.min.js}"></script>-->
-
     <link rel="stylesheet" th:href="@{/style.css}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
@@ -27,24 +17,23 @@ xmlns:th="http://www.thymleaf.org">
 <body>
 <div class="container">
     <div class="container py-5">
-        <!-- For demo purpose -->
         <div class="row text-center text-white mb-5 py-4">
             <div class="col-lg-9 mx-auto">
                 <h1 class="display-4" style="font-weight: bold">Custom Filtration</h1>
             </div>
-        </div><!-- End -->
+        </div>
         <form th:action="@{/jumia/display-filtration}"
             th:object="${customFilterDto}" method="POST">
             <div class="row">
                 <div class="col-lg-6 mx-auto">
                     <label class="text-white mb-3 lead"  style="font-weight: bolder">Filter By Country</label>
-                    <!-- Multiselect dropdown -->
+
                     <select data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="form-select" th:field="*{countryName}">
                         <option value="null"></option>
                         <option th:each="country : ${countries}"
                                 th:value="${country}"
                                 th:text="${country}"></option>
-                    </select><!-- End -->
+                    </select>
                 </div>
                 <div class="col-lg-6 mx-auto">
                     <label class="text-white mb-3 lead" style="font-weight: bolder">Filter By Status</label>
@@ -52,7 +41,7 @@ xmlns:th="http://www.thymleaf.org">
                         <option value="null"></option>
                         <option value="Valid">Valid</option>
                         <option value="Not valid">Not Valid</option>
-                    </select><!-- End -->
+                    </select>
                 </div>
             </div>
             <div class="form-row">
@@ -86,14 +75,14 @@ xmlns:th="http://www.thymleaf.org">
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr th:each="result: ${searchResultList}">
-                                    <td th:text="${result.id}"/>
-                                    <td th:text="${result.customerName}"/>
-                                    <td th:text="${result.getCountry}"/>
-                                    <td th:text="${result.countryCode}"/>
-                                    <td th:text="${result.phoneNumber}"/>
-                                    <td th:text="${result.phoneStatus}"/>
-                                </tr>
+                                    <tr th:each="result: ${searchResultList}">
+                                        <td th:text="${result.id}"/>
+                                        <td th:text="${result.customerName}"/>
+                                        <td th:text="${result.getCountry}"/>
+                                        <td th:text="${result.countryCode}"/>
+                                        <td th:text="${result.phoneNumber}"/>
+                                        <td th:text="${result.phoneStatus}"/>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -109,14 +98,6 @@ xmlns:th="http://www.thymleaf.org">
             $('#example').DataTable();
         });
     });
-</script>
-<script>
-    (function () {
-        $('.selectpicker').selectpicker();
-    });
-</script>
-<script>
-    $('.select2').select2();
 </script>
 </body>
 

@@ -50,7 +50,6 @@ public class CustomFilterService {
         return customerRepository.getCustomerByCountryCode(countryCode);
     }
 
-
     public List<SearchResultDto> initTable (){
         List<SearchResultDto> searchResultList = new ArrayList<>();
         List<Customer> customers = getCustomer();
@@ -123,7 +122,7 @@ public class CustomFilterService {
     public String validatePhoneNumber (String phoneNumber){
 
         String country = countryCodeMap.get(phoneNumber.substring(1,4));
-        Pattern p = Pattern.compile(countryRegexMap.get(country));//. represents single character
+        Pattern p = Pattern.compile(countryRegexMap.get(country));
         Matcher m = p.matcher(phoneNumber);
         if( m.matches() == true) return "Valid";
         else return "Not valid";

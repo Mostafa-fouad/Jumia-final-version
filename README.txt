@@ -6,7 +6,7 @@ ________________________________________________________________________________
 
 Create Docker Image from Dockerfile:
 ------------------------------------
-= First you should put the jar and the sample.db in the same folder 
+= First you should put the jar and the sample.db in the same folder found in the project
  (Jumia-Custom-Filter-App/jumia-exercise-0.0.1-SNAPSHOT.jar) & (Jumia-Custom-Filter-App/sample.db)
   because I have configured the Dockerfile upon this structure. 
   Then run the following command in the cmd after cd to the Dockerfile directory.
@@ -25,8 +25,8 @@ ________________________________________________________________________________
 Run the app using the following url:
 ------------------------------------
 
-localhost:8085/jumia/custom-filteration
+localhost:8885/jumia/custom-filtration
 
-====> The App is up and running, and you can validate the built web-app based on the requirements :)
+====> The App is up and running, and you can validate the built web-app based on the requirements.
 
 
